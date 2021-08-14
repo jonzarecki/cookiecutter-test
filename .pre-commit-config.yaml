@@ -1,13 +1,25 @@
 exclude: "^{{cookiecutter\\.project_name}}/"
+default_stages: [commit, manual]
 repos:
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.2.0
+  - repo: https://github.com/jorisroovers/gitlint
+    rev: v0.15.1
     hooks:
-      - id: check-yaml
-      - id: end-of-file-fixer
+      - id: gitlint
+        stages: [commit-msg]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
       - id: trailing-whitespace
       - id: check-added-large-files
+        args: ["--maxkb=2000"]
+      - id: check-xml
+      - id: check-case-conflict
+      - id: check-executables-have-shebangs
+      - id: check-merge-conflict
+      - id: debug-statements
+      - id: requirements-txt-fixer
+
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v2.3.0
+    rev: "v2.3.2"
     hooks:
       - id: prettier
