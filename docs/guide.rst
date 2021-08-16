@@ -65,7 +65,7 @@ We use `Calendar Versioning`_ with a ``YYYY.MM.DD`` versioning scheme.
 
 The current stable release is `2021.7.15`_.
 
-.. _2021.7.15: https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases/tag/2021.7.15
+.. _2021.7.15: https://github.com/cjolowicz/cookiecutter-test/releases/tag/2021.7.15
 
 
 .. _Installation:
@@ -399,7 +399,6 @@ hosted on :ref:`Read the Docs <Read the Docs integration>`:
    ====================== =======================================================
    ``index.rst``          Main document
    ``contributing.rst``   Contributor Guide (via include)
-   ``codeofconduct.rst``  Code of Conduct (via include)
    ``license.rst``        License (via include)
    ``reference.rst``      API reference
    ====================== =======================================================

@@ -1,5 +1,5 @@
 ===============================
-cookiecutter-hypermodern-python
+cookiecutter-test
 ===============================
 
 .. badges-begin
