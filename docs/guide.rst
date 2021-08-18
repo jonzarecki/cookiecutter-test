@@ -342,13 +342,13 @@ Let's start with the directory layout:
    :widths: auto
 
    ===================================== ===============================
-   ``src/<package>``                     Python package
+   ``<package>``                     Python package
    ``tests``                             Test suite
    ``docs``                              Documentation
    ``.github/workflows``                 GitHub Actions workflows
    ===================================== ===============================
 
-The Python package is located in the ``src/<package>`` directory.
+The Python package is located in the ``<package>`` directory.
 For more details on these files, refer to the section :ref:`The initial package`.
 
 .. table:: Python package
@@ -356,9 +356,8 @@ For more details on these files, refer to the section :ref:`The initial package`
    :widths: auto
 
    ===================================== ===============================
-   ``src/<project>/py.typed``            Marker file for `PEP 561`_
-   ``src/<project>/__init__.py``         Package initialization
-   ``src/<project>/__main__.py``         Command-line interface
+   ``<project>/__init__.py``         Package initialization
+   ``<project>/__main__.py``         Command-line interface
    ===================================== ===============================
 
 The test suite is located in the ``tests`` directory.
@@ -464,13 +463,11 @@ The initial package
 -------------------
 
 You can find the initial Python package in your generated project
-under the ``src`` directory::
+under the ``<package>`` directory::
 
-   src
-   └── <package>
+   <package>
        ├── __init__.py
-       ├── __main__.py
-       └── py.typed
+       └── __main__.py
 
 ``__init__.py``
    This file declares the directory as a `Python package`_,
@@ -501,14 +498,6 @@ under the ``src`` directory::
 
    __ https://docs.python.org/3/library/__main__.html
 
-``py.typed``
-   This is an empty marker file,
-   which declares that your package supports typing
-   and is distributed with its own type information
-   (`PEP 561`_).
-   This allows people using your package
-   to type-check their Python code against it.
-
 
 .. _The test suite:
 
@@ -518,14 +507,11 @@ The test suite
 Tests are written using the pytest_ testing framework,
 the *de facto* standard for testing in Python.
 
-The test suite is located in the ``tests`` directory::
+The test suite is located in the ``tests`` directories within <package>::
 
    tests
-   ├── __init__.py
    └── test_main.py
 
-The test suite is `declared as a package`__,
-and mirrors the source layout of the package under test.
 The file ``test_main.py`` contains tests for the ``__main__`` module.
 
 __ https://docs.pytest.org/en/latest/explanation/goodpractices.html#choosing-a-test-layout-import-rules
@@ -1175,7 +1161,7 @@ For example, the following command type-checks only the ``__main__`` module:
 
 .. code:: console
 
-   $ nox --session=mypy -- src/<package>/__main__.py
+   $ nox --session=mypy -- <package>/__main__.py
 
 
 .. _The pre-commit session:
@@ -2431,7 +2417,7 @@ How to make code changes
    | All tests should pass.
 2. | Add a failing test :ref:`under the tests directory <The test suite>`.
    | Run the tests again to verify that your test fails.
-3. | Make your changes to the package, :ref:`under the src directory <The initial package>`.
+3. | Make your changes to the package, :ref:`under the <package> directory <The initial package>`.
    | Run the tests to verify that all tests pass again.
 
 
