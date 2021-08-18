@@ -342,7 +342,7 @@ Let's start with the directory layout:
    :widths: auto
 
    ===================================== ===============================
-   ``<package>``                     Python package
+   ``<package>``                         Python package
    ``tests``                             Test suite
    ``docs``                              Documentation
    ``.github/workflows``                 GitHub Actions workflows
