@@ -77,4 +77,4 @@ jobs:
         working-directory: test
       - name: Install dependencies using Poetry
         run: poetry install --ansi
-        working-directory: test
+        working-directory: hypermodern-python
