@@ -16,7 +16,7 @@ jobs:
         with:
           repository: "cjolowicz/cookiecutter-test-instance"
           path: cookiecutter-test-instance
-          token: ${{ secrets.X_GITHUB_TOKEN }}
+          token: ${{ secrets.TOKEN }}
       - name: Set up Python 3.7
         uses: actions/setup-python@v2.2.2
         with:
@@ -53,10 +53,11 @@ jobs:
           git config --local user.email "action@github.com"
           git add .
           git commit --allow-empty --author="$author" --date="$date" --message="$message"
-      - name: Push to instance
-        run: >-
-          git
-          -C cookiecutter-test-instance
-          push
-          https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/cjolowicz/cookiecutter-test-instance.git
-          HEAD:main
+
+#      - name: Push to instance
+#        run: >-
+#          git
+#          -C cookiecutter-test-instance
+#          push
+#          https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/cjolowicz/cookiecutter-test-instance.git
+#          HEAD:main
