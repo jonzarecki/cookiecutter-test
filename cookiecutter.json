@@ -1,5 +1,5 @@
 {
-  "project_name": "cookiecutter-test",
+  "project_name": "test",
   "package_name": "{{ cookiecutter.project_name.replace('-', '_') }}",
   "friendly_name": "{{ cookiecutter.project_name.replace('-', ' ').title() }}",
   "author": "Jonathan Zarecki",
