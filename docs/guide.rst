@@ -250,7 +250,6 @@ Here is a complete list of the project variables defined by this template:
    ``email``              E-mail address of the author      katherine@example.com
    ``github_user``        GitHub username of the author     ``katherine``
    ``version``            Initial project version           ``0.0.0``
-   ``license``            The project license               ``MIT``
    ``development_status`` Development status of the project ``Development Status :: 3 - Alpha``
    ====================== ================================= ===================================
 
@@ -385,7 +384,6 @@ The documentation files in the top-level directory are rendered on GitHub_:
    ``README.rst``          Project description for GitHub and PyPI
    ``CONTRIBUTING.rst``    Contributor Guide
    ``CODE_OF_CONDUCT.rst`` Code of Conduct
-   ``LICENSE.rst``         License
    ======================= ============================================
 
 The files in the ``docs`` directory are
@@ -399,7 +397,6 @@ hosted on :ref:`Read the Docs <Read the Docs integration>`:
    ====================== =======================================================
    ``index.rst``          Main document
    ``contributing.rst``   Contributor Guide (via include)
-   ``license.rst``        License (via include)
    ``reference.rst``      API reference
    ====================== =======================================================
 
@@ -568,9 +565,6 @@ The top-level directory contains several stand-alone documentation files:
 
 .. _Contributor Covenant: https://www.contributor-covenant.org
 
-``LICENSE.rst``
-   This file contains the text of your project's license.
-
 .. note::
 
    The files above are also rendered on GitHub and PyPI.
@@ -588,11 +582,6 @@ The documentation files in the ``docs`` directory are built using Sphinx_:
 ``contributing.rst``
    This file includes the Contributor Guide from ``CONTRIBUTING.rst``.
 
-``codeofconduct.rst``
-   This file includes the Code of Conduct from ``CODE_OF_CONDUCT.rst``.
-
-``license.rst``
-   This file includes the license from ``LICENSE.rst``.
 
 ``reference.rst``
    The API reference for your project.
