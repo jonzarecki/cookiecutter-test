@@ -36,7 +36,7 @@ jobs:
           git config --local user.email "action@github.com"
           git add .
           git commit --message="Initial import"
-        working-directory: test
+        working-directory: instance
       - name: Create git repository (Windows)
         if: matrix.os == 'windows-latest'
         run: |
@@ -49,7 +49,7 @@ jobs:
           $ErrorActionPreference = "Stop"
           git add --renormalize .
           git commit --message="Initial import"
-        working-directory: test
+        working-directory: instance
       - name: Compute cache key for pre-commit
         if: matrix.os != 'windows-latest'
         id: cache_key
@@ -68,12 +68,12 @@ jobs:
         if: matrix.os != 'windows-latest'
         with:
           path: ~/.cache/pre-commit
-          key: ${{ steps.cache_key.outputs.result }}-${{ hashFiles('test/.pre-commit-config.yaml') }}
+          key: ${{ steps.cache_key.outputs.result }}-${{ hashFiles('instance/.pre-commit-config.yaml') }}
           restore-keys: |
             ${{ steps.cache_key.outputs.result }}-
       - name: Run test suite using Nox
         run: nox --force-color
-        working-directory: test
+        working-directory: instance
       - name: Install dependencies using Poetry
         run: poetry install --ansi
-        working-directory: test
+        working-directory: instance
