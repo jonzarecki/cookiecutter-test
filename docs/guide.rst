@@ -2408,17 +2408,6 @@ Invoke the command-line interface of your package:
    $ poetry run <project>
 
 
-How to make code changes
-------------------------
-
-1. | Run the tests, :ref:`as explained above <How to test your project>`.
-   | All tests should pass.
-2. | Add a failing test :ref:`under the tests directory <The test suite>`.
-   | Run the tests again to verify that your test fails.
-3. | Make your changes to the package, :ref:`under the <package> directory <The initial package>`.
-   | Run the tests to verify that all tests pass again.
-
-
 How to push code changes
 ------------------------
 
