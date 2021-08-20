@@ -1,6 +1,6 @@
 """Test cases for the __main__ module."""
 
-from {{cookiecutter.package_name}}.__main__ import main
+from {{cookiecutter.package_name}}.main import main
 
 
 def test_main_succeeds() -> None:

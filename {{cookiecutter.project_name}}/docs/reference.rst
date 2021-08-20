@@ -10,7 +10,7 @@ Reference
     :backlinks: none
 
 
-{{ heading(cookiecutter.package_name + ".__main__") }}
+{{ heading(cookiecutter.package_name + ".main") }}
 
-.. automodule:: {{cookiecutter.package_name}}.__main__
+.. automodule:: {{cookiecutter.package_name}}.main
    :members:

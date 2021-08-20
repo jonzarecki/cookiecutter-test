@@ -52,7 +52,7 @@ sphinx-click = "^3.0.1"
 Pygments = "^2.9.0"
 
 [tool.poetry.scripts]
-{{cookiecutter.project_name}} = "{{cookiecutter.package_name}}.__main__:main"
+{{cookiecutter.project_name}} = "{{cookiecutter.package_name}}.main:main"
 
 #[tool.coverage.paths]
 #source = ["src", "*/site-packages"]
