@@ -357,7 +357,7 @@ For more details on these files, refer to the section :ref:`The initial package`
 
    ===================================== ===============================
    ``<project>/__init__.py``             Package initialization
-   ``<project>/main.py``                 Command-line interface
+   ``<project>/main.py``                Command-line interface
    ===================================== ===============================
 
 The test suite is located in the ``tests`` directory.
@@ -513,8 +513,6 @@ The test suite is located in the ``tests`` directories within <package>::
    └── test_main.py
 
 The file ``test_main.py`` contains tests for the ``main`` module.
-
-__ https://docs.pytest.org/en/latest/explanation/goodpractices.html#choosing-a-test-layout-import-rules
 
 Initially, the test suite contains a single test case,
 checking whether the program exits with a status code of zero.
