@@ -173,6 +173,6 @@ repos:
       - id: prettier
 
   - repo: https://github.com/cruft/cruft
-    rev: "2.9.0"
+    rev: "1.4.0"  # last version to support windows
     hooks:  # if fails, run `cruft update` on a clean branch to insert upstream updates to the repo
       - id: cruft
