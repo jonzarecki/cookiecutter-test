@@ -357,7 +357,7 @@ For more details on these files, refer to the section :ref:`The initial package`
 
    ===================================== ===============================
    ``<project>/__init__.py``             Package initialization
-   ``<project>/main.py``                Command-line interface
+   ``<project>/main.py``                 Command-line interface
    ===================================== ===============================
 
 The test suite is located in the ``tests`` directory.
