@@ -476,7 +476,7 @@ under the ``<package>`` directory::
    .. _Python package: https://docs.python.org/3/tutorial/modules.html#packages
 
 ``main.py``
-   The `main`__ module defines the entry point for the command-line interface.
+   The `main` module defines the entry point for the command-line interface.
    The command-line interface is implemented using the Click_ library,
    and supports ``--help`` and ``--version`` options.
    When the package is installed,
@@ -496,7 +496,6 @@ under the ``<package>`` directory::
 
       $ python -m <package> [<options>]
 
-   __ https://docs.python.org/3/library/main.html
 
 
 .. _The test suite:
