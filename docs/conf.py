@@ -4,7 +4,7 @@ from datetime import datetime
 
 project = "Cookiecutter Test"
 author = "Jonathan Zarecki"
-copyright = f"{datetime.now().year}, {author}"
+copyright = f"{datetime.now().year}, {author}"  # pylint: disable=redefined-builtin
 extensions = ["sphinx.ext.intersphinx"]
 intersphinx_mapping = {"mypy": ("https://mypy.readthedocs.io/en/stable/", None)}
 language = "en"

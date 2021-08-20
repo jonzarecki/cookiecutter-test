@@ -357,7 +357,7 @@ For more details on these files, refer to the section :ref:`The initial package`
 
    ===================================== ===============================
    ``<project>/__init__.py``         Package initialization
-   ``<project>/__main__.py``         Command-line interface
+   ``<project>/main.py``         Command-line interface
    ===================================== ===============================
 
 The test suite is located in the ``tests`` directory.
@@ -369,7 +369,7 @@ For more details on these files, refer to the section :ref:`The test suite`.
 
    ===================================== ===============================
    ``tests/__init__.py``                 Test package initialization
-   ``tests/test_main.py``                Test cases for ``__main__``
+   ``tests/test_main.py``                Test cases for ``main``
    ===================================== ===============================
 
 The project documentation is written in reStructuredText_.
@@ -467,7 +467,7 @@ under the ``<package>`` directory::
 
    <package>
        ├── __init__.py
-       └── __main__.py
+       └── main.py
 
 ``__init__.py``
    This file declares the directory as a `Python package`_,
@@ -475,8 +475,8 @@ under the ``<package>`` directory::
 
    .. _Python package: https://docs.python.org/3/tutorial/modules.html#packages
 
-``__main__.py``
-   The `__main__`__ module defines the entry point for the command-line interface.
+``main.py``
+   The `main`__ module defines the entry point for the command-line interface.
    The command-line interface is implemented using the Click_ library,
    and supports ``--help`` and ``--version`` options.
    When the package is installed,
@@ -496,7 +496,7 @@ under the ``<package>`` directory::
 
       $ python -m <package> [<options>]
 
-   __ https://docs.python.org/3/library/__main__.html
+   __ https://docs.python.org/3/library/main.html
 
 
 .. _The test suite:
@@ -512,7 +512,7 @@ The test suite is located in the ``tests`` directories within <package>::
    tests
    └── test_main.py
 
-The file ``test_main.py`` contains tests for the ``__main__`` module.
+The file ``test_main.py`` contains tests for the ``main`` module.
 
 __ https://docs.pytest.org/en/latest/explanation/goodpractices.html#choosing-a-test-layout-import-rules
 
@@ -1157,11 +1157,11 @@ using the current stable release of Python:
    $ nox --session=mypy --python=3.9
 
 Use the separator ``--`` to pass additional options and arguments to ``mypy``.
-For example, the following command type-checks only the ``__main__`` module:
+For example, the following command type-checks only the ``main`` module:
 
 .. code:: console
 
-   $ nox --session=mypy -- <package>/__main__.py
+   $ nox --session=mypy -- <package>/main.py
 
 
 .. _The pre-commit session:
@@ -1337,7 +1337,7 @@ with the current stable release of Python:
    $ nox --session=typeguard --python=3.9
 
 Use the separator ``--`` to pass additional options and arguments to pytest.
-For example, the following command runs only tests for the ``__main__`` module:
+For example, the following command runs only tests for the ``main`` module:
 
 .. code:: console
 
@@ -1346,7 +1346,7 @@ For example, the following command runs only tests for the ``__main__`` module:
 .. note::
 
    Typeguard generates a warning about missing type annotations for a Click object.
-   This is due to the fact that ``__main__.main`` is wrapped by a decorator,
+   This is due to the fact that ``main.main`` is wrapped by a decorator,
    and its type annotations only apply to the inner function,
    not the resulting object as seen by the test suite.
 

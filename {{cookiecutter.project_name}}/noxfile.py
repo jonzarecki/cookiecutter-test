@@ -16,7 +16,7 @@ except ImportError:
     Please install it using the following command:
 
     {sys.executable} -m pip install nox-poetry"""
-    raise SystemExit(dedent(message))
+    raise SystemExit(dedent(message))  # pylint: disable=raise-missing-from
 
 
 package = "{{cookiecutter.package_name}}"
@@ -32,78 +32,78 @@ nox.options.sessions = (
 
 
 @session(python=python_versions)
-def safety(session: Session) -> None:
+def safety(sess: Session) -> None:
     """Scan dependencies for insecure packages."""
-    requirements = session.poetry.export_requirements()
-    session.install("safety")
-    session.run("safety", "check", "--full-report", f"--file={requirements}")
+    requirements = sess.poetry.export_requirements()
+    sess.install("safety")
+    sess.run("safety", "check", "--full-report", f"--file={requirements}")
 
 
 @session(python=python_versions)
-def tests(session: Session) -> None:
+def tests(sess: Session) -> None:
     """Run the test suite."""
-    session.install(".")
-    session.install("coverage[toml]", "pytest", "pygments")
+    sess.install(".")
+    sess.install("coverage[toml]", "pytest", "pygments")
     try:
-        session.run("coverage", "run", "--parallel", "-m", "pytest", *session.posargs)
+        sess.run("coverage", "run", "--parallel", "-m", "pytest", *sess.posargs)
     finally:
-        if session.interactive:
-            session.notify("coverage", posargs=[])
+        if sess.interactive:
+            sess.notify("coverage", posargs=[])
 
 
 @session
-def coverage(session: Session) -> None:
+def coverage(sess: Session) -> None:
     """Produce the coverage report."""
-    args = session.posargs or ["report"]
+    args = sess.posargs or ["report"]
 
-    session.install("coverage[toml]")
+    sess.install("coverage[toml]")
 
-    if not session.posargs and any(Path().glob(".coverage.*")):
-        session.run("coverage", "combine")
+    if not sess.posargs and any(Path().glob(".coverage.*")):
+        sess.run("coverage", "combine")
 
-    session.run("coverage", *args)
+    sess.run("coverage", *args)
 
 
 @session(python=python_versions)
-def typeguard(session: Session) -> None:
+def typeguard(sess: Session) -> None:
     """Runtime type checking using Typeguard."""
-    session.install(".")
-    session.install("pytest", "typeguard", "pygments")
-    session.run("pytest", f"--typeguard-packages={package}", *session.posargs)
+    sess.install(".")
+    sess.install("pytest", "typeguard", "pygments")
+    sess.run("pytest", f"--typeguard-packages={package}", *sess.posargs)
 
 
 @session(python=python_versions)
-def xdoctest(session: Session) -> None:
+def xdoctest(sess: Session) -> None:
     """Run examples with xdoctest."""
-    args = session.posargs or ["all"]
-    session.install(".")
-    session.install("xdoctest[colors]")
-    session.run("python", "-m", "xdoctest", package, *args)
+    args = sess.posargs or ["all"]
+    sess.install(".")
+    sess.install("xdoctest[colors]")
+    sess.run("python", "-m", "xdoctest", package, *args)
 
 
 @session(name="docs-build", python=python_versions)
-def docs_build(session: Session) -> None:
+def docs_build(sess: Session) -> None:
     """Build the documentation."""
-    args = session.posargs or ["docs", "docs/_build"]
-    session.install(".")
-    session.install("sphinx", "sphinx-click", "sphinx-rtd-theme")
+    args = sess.posargs or ["docs", "docs/_build"]
+    sess.install(".")
+    sess.install("sphinx", "sphinx-click", "sphinx-rtd-theme")
 
     build_dir = Path("docs", "_build")
     if build_dir.exists():
         shutil.rmtree(build_dir)
 
-    session.run("sphinx-build", *args)
+    sess.run("sphinx-build", *args)
 
 
 @session(python=python_versions)
-def docs(session: Session) -> None:
+def docs(sess: Session) -> None:
     """Build and serve the documentation with live reloading on file changes."""
-    args = session.posargs or ["--open-browser", "docs", "docs/_build"]
-    session.install(".")
-    session.install("sphinx", "sphinx-autobuild", "sphinx-click", "sphinx-rtd-theme")
+    args = sess.posargs or ["--open-browser", "docs", "docs/_build"]
+    sess.install(".")
+    sess.install("sphinx", "sphinx-autobuild", "sphinx-click", "sphinx-rtd-theme")
 
     build_dir = Path("docs", "_build")
     if build_dir.exists():
         shutil.rmtree(build_dir)
 
-    session.run("sphinx-autobuild", *args)
+    sess.run("sphinx-autobuild", *args)
