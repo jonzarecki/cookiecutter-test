@@ -1,4 +1,4 @@
-exclude: "^{{cookiecutter\\.project_name}}/"
+exclude: "^{{cookiecutter.project_name}}/"
 default_stages: [commit, manual]
 repos:
   - repo: https://github.com/jorisroovers/gitlint
