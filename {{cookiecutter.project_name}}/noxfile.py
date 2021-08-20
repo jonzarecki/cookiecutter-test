@@ -43,8 +43,10 @@ def safety(sess: Session) -> None:
 def tests(sess: Session) -> None:
     """Run the test suite."""
     sess.install(".")
+    # sess.install("coverage[toml]", "pytest", "pytest-cov", "pytest-xdist", "pygments")
     sess.install("coverage[toml]", "pytest", "pygments")
     try:
+        # sess.run("pytest", "-n" "3" "--rootdir=." "--cov=."  --cov-fail-under=80")
         sess.run("coverage", "run", "--parallel", "-m", "pytest", *sess.posargs)
     finally:
         if sess.interactive:
@@ -58,7 +60,7 @@ def coverage(sess: Session) -> None:
 
     sess.install("coverage[toml]")
 
-    if not sess.posargs and any(Path().glob(".coverage.*")):
+    if not sess.posargs and any(Path().glob(".cache/.coverage.*")):
         sess.run("coverage", "combine")
 
     sess.run("coverage", *args)
