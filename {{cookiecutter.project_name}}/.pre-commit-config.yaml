@@ -171,3 +171,8 @@ repos:
     rev: "v2.3.2"
     hooks:
       - id: prettier
+
+  - repo: https://github.com/cruft/cruft
+    rev: "2.9.0"
+    hooks:  # if fails, run `cruft update` on a clean branch to insert upstream updates to the repo
+      - id: cruft
