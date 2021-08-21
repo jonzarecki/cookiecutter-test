@@ -17,7 +17,6 @@ except ImportError:
     {sys.executable} -m pip install nox-poetry"""
     raise SystemExit(dedent(message))  # pylint: disable=raise-missing-from
 
-
 package = "{{cookiecutter.package_name}}"
 python_versions = ["3.7"]
 nox.needs_version = ">= 2021.6.6"
@@ -57,8 +56,8 @@ def coverage(sess: Session) -> None:
     sess.install("coverage[toml]")
 
     if not sess.posargs and any(Path().glob(".cache/.coverage.*")):
-        sess.run("coverage", "combine")
-
+        # keep .coverage.* files if not interactive (i.e. CI)
+        sess.run(*(["coverage", "combine"] + ["--keep"] if not sess.interactive else []))
     sess.run("coverage", *args)
 
 
