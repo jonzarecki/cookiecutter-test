@@ -63,13 +63,14 @@ Pygments = "^2.9.0"
 
 
 [tool.coverage.run]
-source = ["{{cookiecutter.package_name}}"]
+source = ["{{cookiecutter.package_name}}", "common"]
 omit = [
   "setup.py",
+  "config.py",
+  "constants.py",
   "*/notebooks/*",
+  "*/tests/*",
   "*/main.py",
-  "common/*",
-  "module/*",
   "*/__init__.py"]
 data_file = ".cache/.coverage"
 
@@ -102,7 +103,7 @@ minversion = "6.0"
 addopts = "-ra -q"
 python_files = [
   "test_*.py",
-  "example_*.py"
+#   "example_*.py"
 ]
 
 
