@@ -4,7 +4,6 @@ on:
   push:
   pull_request:
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,14 +13,8 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag {{cookiecutter.project_name}}:$(date +%s)
+        run: docker build . --file Dockerfile --tag instance:ci
 
-  test:
-    runs-on: ubuntu-latest
-    container: {{cookiecutter.project_name}}:$(date +%s)
-
-    steps:
       - name: Run Tests
         run: |
-          nox --force-color --session=tests
-
+          docker run instance:ci nox --force-color --session=tests
