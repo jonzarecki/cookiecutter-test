@@ -45,11 +45,6 @@ Features
 * TODO
 
 
-Requirements
-------------
-
-* TODO
-
 
 Installation
 ------------
@@ -67,20 +62,6 @@ Usage
 Please see the `Command-line Reference <Usage_>`_ for details.
 
 
-Contributing
-------------
-
-Contributions are very welcome.
-To learn more, see the `Contributor Guide`_.
-
-
-License
--------
-
-Distributed under the terms of the `{{cookiecutter.license.replace("-", " ")}} license`_,
-*{{cookiecutter.friendly_name}}* is free and open source software.
-
-
 Issues
 ------
 
@@ -91,15 +72,14 @@ please `file an issue`_ along with a detailed description.
 Credits
 -------
 
-This project was generated from `@cjolowicz`_'s `Hypermodern Python Cookiecutter`_ template.
+This project was generated from `@jonzarecki`_'s `cookiecutter-test`_ template.
 
-.. _@cjolowicz: https://github.com/cjolowicz
+.. _@jonzarecki: https://github.com/jonzarecki
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _{{cookiecutter.license.replace("-", " ")}} license: https://opensource.org/licenses/{{cookiecutter.license}}
 .. _PyPI: https://pypi.org/
-.. _Hypermodern Python Cookiecutter: https://github.com/cjolowicz/cookiecutter-hypermodern-python
+.. _cookiecutter-test: https://github.com/jonzarecki/cookiecutter-test
 .. _file an issue: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/issues
 .. _pip: https://pip.pypa.io/
 .. github-only
-.. _Contributor Guide: CONTRIBUTING.rst
 .. _Usage: https://{{cookiecutter.project_name}}.readthedocs.io/en/latest/usage.html

@@ -12,7 +12,7 @@ cookiecutter-test
    :target: https://badgen.net/badge/status/alpha/d8624d
    :alt: Project Status
 .. |Python Version| image:: https://img.shields.io/pypi/pyversions/cookiecutter-hypermodern-python-instance
-   :target: https://github.com/cjolowicz/cookiecutter-hypermodern-python
+   :target: https://github.com/jonzarecki/cookiecutter-test
    :alt: Python Version
 .. |CalVer| image:: https://img.shields.io/badge/calver-YYYY.MM.DD-22bfda.svg
    :target: http://calver.org/
@@ -88,6 +88,12 @@ Features
 - Manage project labels with `GitHub Labeler`_
 
 The template supports Python 3.6, 3.7, 3.8, and 3.9.
+
+TODO:
+
+- create a codecov account (for the links to work)
+- create a readthedocs account
+- create a pre-commit account (for running pre-commit on all pushes)
 
 .. features-end
 
