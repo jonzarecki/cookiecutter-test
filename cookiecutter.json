@@ -2,9 +2,9 @@
   "project_name": "instance",
   "package_name": "{{ cookiecutter.project_name.replace('-', '_') }}",
   "friendly_name": "{{ cookiecutter.project_name.replace('-', ' ').title() }}",
-  "author": "Claudio Jolowicz",
-  "email": "mail@claudiojolowicz.com",
-  "github_user": "cjolowicz",
+  "author": "Jonathan Zarecki",
+  "email": "mail@jonzarecki.com",
+  "github_user": "jonzarecki",
   "version": "0.0.0",
   "license": ["MIT", "Apache-2.0", "GPL-3.0"],
   "development_status": [
