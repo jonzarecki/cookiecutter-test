@@ -1,4 +1,5 @@
 default_stages: [commit, manual]
+exclude: ^notebooks/nb_python.*$
 #Install using:
 # pre-commit install --install-hooks -t pre-commit -t commit-msg -t post-commit -t pre-push
 repos:
@@ -13,7 +14,8 @@ repos:
     hooks:
       - id: codespell
         args:
-          - --ignore-words-list=nd,reacher,thist,ths
+          - --ignore-words-list=word1,word2
+          - --skip="*.ipynb"
 
   - repo: https://github.com/pre-commit/mirrors-pylint
     rev: "v2.7.4"
