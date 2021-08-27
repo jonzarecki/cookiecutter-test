@@ -2,6 +2,12 @@
 # hello world
 
 # %%
+%load_ext autoreload
+%autoreload 2
+import sys
+sys.path.append("../../") # go to root dir
+
+# %%
 a = 1
 print(a)
 print(a)
