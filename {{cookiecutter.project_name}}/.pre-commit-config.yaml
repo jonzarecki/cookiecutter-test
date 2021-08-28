@@ -93,7 +93,7 @@ repos:
     hooks:
       - id: docformatter
         exclude: ^notebooks/nb_python.*$
-        args: [--in-place, --blank]
+        args: [--in-place, --wrap-summaries, "0", --wrap-descriptions, "0", --blank]
 
   - repo: https://github.com/pycqa/pydocstyle
     rev: 6.1.1
