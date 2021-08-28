@@ -95,6 +95,9 @@ TODO:
 - create a readthedocs account
 - create a pre-commit account (for running pre-commit on all pushes)
 
+
+The project doesn't currently support building into a package (might in the future)
+
 .. features-end
 
 .. references-begin

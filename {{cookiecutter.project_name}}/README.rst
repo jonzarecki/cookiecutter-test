@@ -45,23 +45,6 @@ Features
 * TODO
 
 
-
-Installation
-------------
-
-You can install *{{cookiecutter.friendly_name}}* via pip_ from PyPI_:
-
-.. code:: console
-
-   $ pip install {{cookiecutter.project_name}}
-
-
-Usage
------
-
-Please see the `Command-line Reference <Usage_>`_ for details.
-
-
 Issues
 ------
 
@@ -75,11 +58,6 @@ Credits
 This project was generated from `@jonzarecki`_'s `cookiecutter-test`_ template.
 
 .. _@jonzarecki: https://github.com/jonzarecki
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _{{cookiecutter.license.replace("-", " ")}} license: https://opensource.org/licenses/{{cookiecutter.license}}
-.. _PyPI: https://pypi.org/
 .. _cookiecutter-test: https://github.com/jonzarecki/cookiecutter-test
 .. _file an issue: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/issues
-.. _pip: https://pip.pypa.io/
-.. github-only
-.. _Usage: https://{{cookiecutter.project_name}}.readthedocs.io/en/latest/usage.html
