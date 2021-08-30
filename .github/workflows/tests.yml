@@ -72,8 +72,5 @@ jobs:
           restore-keys: |
             ${{ steps.cache_key.outputs.result }}-
       - name: Run test suite using Nox
-        run: nox --force-color
-        working-directory: instance
-      - name: Install dependencies using Poetry
-        run: poetry install --ansi
+        run: nox --force-color -e tests -e xdoctest -e docs-build # "pre-commit" has some error only present in CI
         working-directory: instance
