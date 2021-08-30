@@ -5,14 +5,19 @@ from pathlib import Path
 import nox
 from nox import Session
 
-package = "ground_scanner"
+package = "{{cookiecutter.package_name}}"
 python_versions = ["3.7"]
 nox.needs_version = ">= 2021.6.6"
-nox.options.sessions = (
-    "tests",
-    "xdoctest",
-    "docs-build",
-)
+nox.options.sessions = ("tests", "xdoctest", "docs-build", "pre-commit")
+
+
+@nox.session(name="pre-commit", python=python_versions)
+def pre_commit(sess: Session) -> None:
+    """Run pre-commit on all files."""
+    sess.install("pre-commit")
+
+    sess.run(*"pre-commit install --install-hooks -t pre-commit -t commit-msg -t post-commit -t pre-push".split(" "))
+    sess.run(*"pre-commit run --all-files".split(" "))
 
 
 @nox.session(python=False)
@@ -36,13 +41,6 @@ def coverage(sess: Session) -> None:
         # keep .coverage.* files if not interactive (i.e. CI)
         sess.run(*(["coverage", "combine"] + (["--keep"] if not sess.interactive else [])))
     sess.run("coverage", *args)
-
-
-@nox.session(python=False)
-def typeguard(sess: Session) -> None:
-    """Runtime type checking using Typeguard."""
-    sess.install("pytest", "typeguard", "pygments")
-    sess.run("pytest", f"--typeguard-packages={package}", *sess.posargs)
 
 
 @nox.session(python=False)

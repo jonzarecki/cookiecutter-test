@@ -1,10 +1,9 @@
 """Sphinx configuration."""
 from datetime import datetime
 
-
 project = "{{cookiecutter.friendly_name}}"
 author = "{{cookiecutter.author}}"
-copyright = f"{datetime.now().year}, {author}"  # pylint: disable=redefined-builtin
+copyright = f"{datetime.now().year}, {author}"  # noqa
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
