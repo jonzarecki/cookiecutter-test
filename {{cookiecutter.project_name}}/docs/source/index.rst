@@ -3,7 +3,7 @@
 {% for _ in text %}-{% endfor %}
 {%- endmacro -%}
 
-{{ heading("Documentation for " cookiecutter.package_name) }}
+{{ heading("Documentation for " + cookiecutter.package_name) }}
 
 .. toctree::
    :hidden:
