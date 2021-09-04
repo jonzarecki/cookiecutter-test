@@ -16,5 +16,5 @@
     "Development Status :: 6 - Mature",
     "Development Status :: 7 - Inactive"
   ],
-  "_copy_without_render": ["*.html", "docs/source/_templates/.*"]
+  "_copy_without_render": ["*.html", "**docs/source/_templates/**"]
 }
