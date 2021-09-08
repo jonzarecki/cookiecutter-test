@@ -4,30 +4,11 @@ Quickstart Guide
 Requirements
 ------------
 
-Install Cookiecutter_:
+Install cruft:
 
 .. code:: console
 
-   $ pipx install cookiecutter
-
-Install Poetry_ by downloading and running install-poetry.py_:
-
-.. _install-poetry.py: https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py
-
-.. code:: console
-
-   $ python install-poetry.py
-
-Install Nox_ and nox-poetry_:
-
-.. code:: console
-
-   $ pipx install nox
-   $ pipx inject nox nox-poetry
-
-pipx_ is preferred, but you can also install with ``pip install --user``.
-
-It is recommended to set up Python 3.6, 3.7, 3.8, and 3.9 using pyenv_.
+   $ pip install cruft
 
 
 Creating a project
@@ -37,8 +18,7 @@ Generate a Python project:
 
 .. code:: console
 
-   $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python \
-     --checkout="2021.7.15"
+   $ cruft create https://github.com/jonzarecki/cookiecutter-test
 
 Change to the root directory of your new project,
 and create a Git repository:
@@ -48,24 +28,6 @@ and create a Git repository:
    $ git init
    $ git add .
    $ git commit
-
-
-Running
--------
-
-Run the command-line interface from the source tree:
-
-.. code:: console
-
-   $ poetry install
-   $ poetry run <project>
-
-Run an interactive Python session:
-
-.. code:: console
-
-   $ poetry install
-   $ poetry run python
 
 
 Testing
@@ -140,8 +102,8 @@ Read the Docs
    on Read the Docs.
 
 
-Releasing
----------
+Releasing  # TODO doc
+---------------------
 
 Releases are triggered by a version bump on the default branch.
 It is recommended to do this in a separate pull request:

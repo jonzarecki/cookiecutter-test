@@ -58,7 +58,6 @@ Our goals are:
 
 The project template is centered around the following tools:
 
-- Poetry_ for packaging and dependency management
 - Nox_ for automation of checks and other development tasks
 - `GitHub Actions`_ for continuous integration and delivery
 
