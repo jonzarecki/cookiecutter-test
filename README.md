@@ -6,7 +6,7 @@
 ![License](https://img.shields.io/github/license/cjolowicz/cookiecutter-hypermodern-python)
 ![Read the Docs](https://img.shields.io/readthedocs/jonzarecki-cookiecutter-test/latest.svg?label=Read%20the%20Docs)
 ![Tests](https://github.com/jonzarecki/cookiecutter-test/workflows/Tests/badge.svg)
-![Codecov](https://codecov.io/gh/jonzarecki/cookiecutter-test/branch/main/graph/badge.svg)
+![Codecov](https://codecov.io/gh/jonzarecki/cookiecutter-test-instance/branch/main/graph/badge.svg)
 ![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)
 ![Black](https://img.shields.io/badge/code%20style-black-000000.svg)
 
