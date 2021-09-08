@@ -13,7 +13,7 @@ cookiecutter-test
 .. |Read the Docs| image:: https://img.shields.io/readthedocs/jonzarecki-cookiecutter-test/latest.svg?label=Read%20the%20Docs
    :target: https://jonzarecki-cookiecutter-test.readthedocs.io/
    :alt: Read the documentation at https://jonzarecki-cookiecutter-test.readthedocs.io/
-.. |Tests| image:: https://github.com/jonzarecki/cookiecutter-hypermodern-python/workflows/Tests/badge.svg
+.. |Tests| image:: https://github.com/jonzarecki/cookiecutter-test/workflows/Tests/badge.svg
    :target: https://github.com/jonzarecki/cookiecutter-test/actions?workflow=Tests
    :alt: Tests
 .. |Codecov| image:: https://codecov.io/gh/jonzarecki/cookiecutter-test-instance-instance/branch/main/graph/badge.svg
