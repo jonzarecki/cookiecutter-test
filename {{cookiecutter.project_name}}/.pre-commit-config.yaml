@@ -44,6 +44,7 @@ repos:
         args: ["--line-length=120"]
 
   - repo: https://github.com/pycqa/flake8
+    # disable using: `# noqa`
     rev: 3.9.2
     hooks:
       - id: flake8
@@ -59,7 +60,7 @@ repos:
             flake8-builtins, # Check for python builtins being used as variables or parameters.
             flake8-comprehensions, # It helps you write a better list/set/dict comprehensions.
             flake8-deprecated, # Warns about deprecated method calls.
-            flake8-eradicate, # Flake8 plugin to find commented out code
+            flake8-eradicate, # Flake8 plugin to find commented out code, disable E800 using `# noqa: E800`
             # flake8-pytest, # pytest assert checker plugin for flake8
             flake8-tabs, # Tab (or Spaces) indentation style checker for flake8
             pep8-naming, # Check PEP-8 naming conventions, plugin for flake8
@@ -68,13 +69,13 @@ repos:
   # considered wily, radon & xenon for code complexity, satisfied with flake8 complexity scores
 
   - repo: https://github.com/jendrikseipp/vulture
+    # disable using: exclude in vulture's pyproject.toml
     rev: "v2.3"
     hooks:
       - id: vulture
         name: vulture
         language: python
         entry: vulture
-        exclude: ^notebooks.*$
         description: Find unused Python code.
         types: [python]
 

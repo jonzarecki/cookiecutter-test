@@ -105,7 +105,7 @@ make_whitelist = true
 min_confidence = 100
 paths = ["{{cookiecutter.package_name}}", "common"]
 sort_by_size = true
-verbose = true
+verbose = false  # verbose doesn't work on utf-8
 
 
 [build-system]
