@@ -63,7 +63,7 @@ repos:
             flake8-eradicate, # Flake8 plugin to find commented out code, disable E800 using `# noqa: E800`
             # flake8-pytest, # pytest assert checker plugin for flake8
             flake8-tabs, # Tab (or Spaces) indentation style checker for flake8
-            pep8-naming, # Check PEP-8 naming conventions, plugin for flake8
+            # pep8-naming, # Check PEP-8 naming conventions, plugin for flake8  # covered by pylint
           ]
 
   # considered wily, radon & xenon for code complexity, satisfied with flake8 complexity scores
