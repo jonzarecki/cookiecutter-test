@@ -16,8 +16,8 @@ cookiecutter-test
 .. |Tests| image:: https://github.com/jonzarecki/cookiecutter-test/workflows/Tests/badge.svg
    :target: https://github.com/jonzarecki/cookiecutter-test/actions?workflow=Tests
    :alt: Tests
-.. |Codecov| image:: https://codecov.io/gh/jonzarecki/cookiecutter-test-instance-instance/branch/main/graph/badge.svg
-   :target: https://codecov.io/gh/jonzarecki/cookiecutter-test-instance-instance/branch/main/graph/badge.svg
+.. |Codecov| image:: https://codecov.io/gh/jonzarecki/cookiecutter-test-instance/branch/main/graph/badge.svg
+   :target: https://codecov.io/gh/jonzarecki/cookiecutter-test-instance/branch/main/graph/badge.svg
    :alt: Codecov
 .. |pre-commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
    :target: https://github.com/pre-commit/pre-commit
