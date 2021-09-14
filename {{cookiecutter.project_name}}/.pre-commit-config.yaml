@@ -99,7 +99,6 @@ repos:
     hooks:
       - id: pydocstyle
         exclude: ^.*(notebooks.*|__init__.py|test.*)$
-        args: [-i, "--wrap-summaries=0", "--wrap-descriptions=0", --blank]
 
   - repo: https://github.com/terrencepreilly/darglint
     rev: v1.8.0
