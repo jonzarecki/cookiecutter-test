@@ -16,7 +16,7 @@ jobs:
         run: docker build . --file Dockerfile --tag {{cookiecutter.package_name}}:ci
 
       - name: Run Nox on all sessions
-        run: | # -e VAR=${{ secrets.VAR }} || Access using os.environ["VAR"]
+        run: | # -e VAR=$\{\{ secrets.VAR \}\} || Access using os.environ["VAR"], remove escapes
           docker run |
           -v `pwd`:/code  {{cookiecutter.package_name}}:ci nox --force-color
 
