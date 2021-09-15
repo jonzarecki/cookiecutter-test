@@ -16,8 +16,10 @@ jobs:
         run: docker build . --file Dockerfile --tag {{cookiecutter.package_name}}:ci
 
       - name: Run Nox on all sessions
-        run: |
-          docker run -v `pwd`:/code  {{cookiecutter.package_name}}:ci nox --force-color
+        run: | # -e VAR=${{ secrets.VAR }} || Access using os.environ["VAR"]
+          docker run |
+          -v `pwd`:/code  {{cookiecutter.package_name}}:ci nox --force-color
+
 
       - name: Upload coverage data
         uses: "actions/upload-artifact@v2.2.4"

@@ -1,6 +1,5 @@
-FROM nvidia/cuda:10.2-cudnn8-devel-ubuntu16.04
+FROM continuumio/miniconda3:4.10.3
 
-# Set up environment and renderer user
 ENV TZ=UTC
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
@@ -14,16 +13,11 @@ RUN apt-get update && apt-get install -y \
       nano vim \
       openssh-server
 
-# Install {{cookiecutter.package_name}} environment
-RUN curl -o ~/miniconda.sh -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
-    chmod +x ~/miniconda.sh && \
-    ~/miniconda.sh -b -p /opt/conda && \
-    rm ~/miniconda.sh
-
 COPY environment.yml /tmp/environment.yml
 ENV PATH /opt/conda/bin:$PATH
 ENV CONDA_AUTO_UPDATE_CONDA=false
 
+# Install {{cookiecutter.package_name}} environment
 RUN conda env create -f /tmp/environment.yml && conda clean -ya
 
 # Init conda environment
