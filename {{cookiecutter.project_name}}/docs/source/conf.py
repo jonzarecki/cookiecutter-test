@@ -31,7 +31,7 @@ templates_path = ["_templates"]
 
 
 class SimpleDocumenter(autodoc.DataDocumenter):
-    def get_doc(self, ignore: Optional[int] = None) -> Optional[List[List[str]]]:  # pylint: disable=unused-argument
+    def get_doc(self, _ignore: Optional[int] = None) -> Optional[List[List[str]]]:
         # Check the variable has a docstring-comment
         comment = self.get_module_comment(self.objpath[-1])
         if comment:

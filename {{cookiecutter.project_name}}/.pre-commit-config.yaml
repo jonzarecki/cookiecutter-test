@@ -73,11 +73,7 @@ repos:
     rev: "v2.3"
     hooks:
       - id: vulture
-        name: vulture
-        language: python
-        entry: vulture
-        description: Find unused Python code.
-        types: [python]
+        pass_filenames: true
 
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: "v0.901"
@@ -167,6 +163,7 @@ repos:
           [
             "--max-line-length=120",
             "--ignore-path=docs/source/_**",
+            "--ignore=D002,D004",
             "docs/source",
           ]
 
