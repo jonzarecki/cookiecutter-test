@@ -156,7 +156,9 @@ disable=abstract-method,
         logging-fstring-interpolation,
         redefined-builtin,
         too-many-branches,
-        f-string-without-interpolation,
+        f-string-without-interpolation,  # covered by flake8
+        unused-variable,  # covered by flake8
+        unused-argument,  # covered by flake8
 
 [REPORTS]
 
