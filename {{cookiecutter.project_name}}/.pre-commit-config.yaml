@@ -19,9 +19,9 @@ repos:
     rev: "v2.7.4"
     hooks:
       - id: pylint
-        exclude: ^notebooks.*$
+        exclude: ^(notebooks.*|.*test.*)$
         types: [python]
-        additional_dependencies: ["pylint-pytest==1.1.2"] #  fix false positives with pytest
+        additional_dependencies: ["pylint-pytest==1.0.3"] #  fix false positives with pytest
         entry: python -m pylint
         args: ["-rn", "-sn", "--rcfile=.pylintrc"]
 
