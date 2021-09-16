@@ -1,7 +1,6 @@
-# pylint: disable=redefined-outer-name
 import pytest
 
-from instance.utils.example_util import util_function2
+from {{ cookiecutter.package_name }}.utils.example_util import util_function2
 
 
 @pytest.fixture

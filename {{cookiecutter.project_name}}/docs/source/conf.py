@@ -8,8 +8,8 @@ from sphinx.ext import autodoc
 
 sys.path.insert(0, os.path.abspath("../.."))  # Source code dir relative to this file
 
-project = "Instance"
-author = "Claudio Jolowicz"
+project = "{{ cookiecutter.friendly_name }}"
+author = "{{ cookiecutter.author }}"
 copyright = f"{datetime.now().year}, {author}"  # noqa
 extensions = [
     "sphinx.ext.autodoc",
