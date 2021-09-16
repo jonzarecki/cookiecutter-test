@@ -8,7 +8,7 @@ from nox import Session
 package = "{{cookiecutter.package_name}}"
 python_versions = ["3.7"]
 nox.needs_version = ">= 2021.6.6"
-nox.options.sessions = ("tests", "xdoctest", "docs-build", "pre-commit")
+nox.options.sessions = ("tests", "xdoctest", "docs-build")  # , "pre-commit"
 
 
 @nox.session(name="pre-commit", python=python_versions)
