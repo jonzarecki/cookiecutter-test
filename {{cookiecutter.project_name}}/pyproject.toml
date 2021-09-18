@@ -30,16 +30,11 @@ omit = [
   "setup.py",
   "*config*.py",
   "*constants*.py",
-  "*/notebooks/*",
-  "*/notebooks/*",
+  "**/notebooks/**",
   "*/tests/*",
   "*/main.py",
-  "*/__init__.py"]
+  "**/__init__.py"]
 data_file = ".cache/.coverage"
-
-# need to `pip install pytest pytest-cov converage[toml] pytest-xdist
-# from root dir:
-# pytest -n 3 --rootdir=. . --cov=.  --cov-fail-under=80
 
 
 [tool.coverage.report]

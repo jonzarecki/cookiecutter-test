@@ -28,8 +28,9 @@ ENV PATH $CONDA_PREFIX/bin:$PATH
 # jupytertheme config to dark mode - Optional, seems to mess up some UI elements in 8.8.20
 #RUN $CONDA_PREFIX/bin/jt -t onedork -fs 95 -altp -tfs 11 -nfs 115 -lineh 140 -cellw 1200 -T
 
+# Install requirements for noxfile.py
 COPY .github/workflows/constraints.txt /tmp
-RUN $CONDA_PREFIX/bin/pip install --constraint=/tmp/constraints.txt nox
+RUN $CONDA_PREFIX/bin/pip install --constraint=/tmp/constraints.txt nox toml
 
 # copy source code
 COPY . /code
