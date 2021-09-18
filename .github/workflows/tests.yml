@@ -25,7 +25,7 @@ jobs:
         working-directory: cookiecutter-test
         run: |
           pip install --constraint=.github/workflows/constraints.txt pip
-          pip install --constraint=.github/workflows/constraints.txt cookiecutter nox nox-poetry poetry
+          pip install --constraint=.github/workflows/constraints.txt cookiecutter nox toml
       - name: Generate project using Cookiecutter
         run: cookiecutter --no-input cookiecutter-test
       - name: Create git repository
