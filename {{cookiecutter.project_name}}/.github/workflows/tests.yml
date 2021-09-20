@@ -20,7 +20,7 @@ jobs:
         id: prep
         run: |
 {%- endraw %}
-          DOCKER_IMAGE=ghcr.io/{{ cookiecutter.github_user }}/{{ cookiecutter.project_name }}
+          DOCKER_IMAGE=ghcr.io/{{ cookiecutter.github_user }}/{{ cookiecutter.package_name }}
 {%- raw %}
           VERSION=edge
           if [[ $GITHUB_REF == refs/tags/* ]]; then
@@ -55,7 +55,7 @@ jobs:
           context: .
           file: ./Dockerfile
 {%- endraw %}
-          tags: cookiecutter_test_instance:ci
+          tags: {{ cookiecutter.package_name }}:ci
 {%- raw %}
           load: true
           cache-from: type=gha
@@ -67,7 +67,7 @@ jobs:
           docker run --rm \
           -v `pwd`:/code \
 {%- endraw %}
-          {{ cookiecutter.project_name }}:ci nox --force-color
+          {{ cookiecutter.package_name }}:ci nox --force-color
 {%- raw %}
 
       - name: Upload coverage data
@@ -85,7 +85,7 @@ jobs:
       - name: Create coverage report
         run: |
 {%- endraw %}
-          docker run -v `pwd`:/code  {{ cookiecutter.project_name }}:ci nox --force-color --session=coverage -- xml
+          docker run -v `pwd`:/code  {{ cookiecutter.package_name }}:ci nox --force-color --session=coverage -- xml
 {%- raw %}
 
       - name: Upload coverage report
