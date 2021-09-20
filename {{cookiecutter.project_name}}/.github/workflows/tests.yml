@@ -1,4 +1,4 @@
-name: Main Branch CI
+{% raw %}name: Main Branch CI
 
 # Based on https://github.com/metcalfc/docker-action-examples
 on:
@@ -16,7 +16,6 @@ jobs:
         id: prep
         run: |
           DOCKER_IMAGE=ghcr.io/{{ cookiecutter.github_user }}/{{ cookiecutter.project_name }}
-{% raw %}
           VERSION=edge
           if [[ $GITHUB_REF == refs/tags/* ]]; then
             VERSION=${GITHUB_REF#refs/tags/v}
@@ -55,11 +54,11 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
+{% raw %}
       - name: Run Nox sessions
         # Add env variables: -e VAR=${{ secrets.VAR }} || Access using os.environ["VAR"], remove escapes
         run: |
           docker run --rm \
-{% raw %}
           -v `pwd`:/code \
 {% endraw %}
           {{ cookiecutter.project_name }}:ci nox --force-color
