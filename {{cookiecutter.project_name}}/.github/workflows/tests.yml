@@ -1,4 +1,4 @@
-{% raw %}name: Main Branch CI
+name: Main Branch CI
 
 # Based on https://github.com/metcalfc/docker-action-examples
 on:
@@ -16,6 +16,7 @@ jobs:
         id: prep
         run: |
           DOCKER_IMAGE=ghcr.io/{{ cookiecutter.github_user }}/{{ cookiecutter.project_name }}
+{% raw %}
           VERSION=edge
           if [[ $GITHUB_REF == refs/tags/* ]]; then
             VERSION=${GITHUB_REF#refs/tags/v}
