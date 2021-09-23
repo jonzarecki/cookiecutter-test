@@ -18,7 +18,7 @@ extensions = [
     "sphinx.ext.autosummary",  # Create neat summary tables
     "sphinx.ext.coverage",
     "sphinx.ext.viewcode",
-    'myst_parser',
+    "myst_parser",
 ]
 autodoc_typehints = "description"
 autodoc_default_flags = ["members", "special-members", "private-members", "undoc-members"]
@@ -26,9 +26,9 @@ autosummary_generate = True  # Turn on sphinx.ext.autosummary
 
 html_theme = "sphinx_rtd_theme"
 source_suffix = {
-    '.rst': 'restructuredtext',
-    '.txt': 'markdown',
-    '.md': 'markdown',
+    ".rst": "restructuredtext",
+    ".txt": "markdown",
+    ".md": "markdown",
 }
 
 
