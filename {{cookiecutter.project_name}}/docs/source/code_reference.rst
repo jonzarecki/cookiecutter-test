@@ -2,8 +2,8 @@
 {{text}}
 {% for _ in text %}-{% endfor %}
 {%- endmacro -%}
-Reference
-=========
+Code Reference
+==============
 
 .. contents::
     :local:

@@ -10,5 +10,5 @@
    :maxdepth: 1
 
    usage
-   reference
-   Changelog <https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/releases>
+   reference_material/index
+   code_reference
