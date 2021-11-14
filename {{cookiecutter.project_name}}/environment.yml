@@ -21,7 +21,6 @@ dependencies:
 #  - cudatoolkit
 #
 #  # Jupyter Environment
-#  - autopep8
 #  - notebook
 #  - ipython
 #  - jupyter_contrib_nbextensions
@@ -38,7 +37,5 @@ dependencies:
 #      - wandb
 #      - panel
 #      - streamlit
-#      - argparse
 #      - pathos
-#      - jupyterthemes
 #      - sqlfluff # for sql linting
