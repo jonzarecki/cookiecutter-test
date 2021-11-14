@@ -65,7 +65,7 @@ Features
 - Automated dependency updates with Dependabot_
 - Code formatting with Black_ and Prettier_
 - Testing with pytest_
-- Code coverage with Coverage.py_
+- Code coverage with `Coverage.py`_
 - Coverage reporting with Codecov_
 - Static type-checking with mypy_
 - Check documentation examples with xdoctest_
