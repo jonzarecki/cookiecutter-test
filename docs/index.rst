@@ -7,7 +7,6 @@ Hypermodern Python Cookiecutter
 
    Quickstart <quickstart>
    guide
-   contributing
    Changelog <https://github.com/cjolowicz/cookiecutter-hypermodern-python/releases>
 
 .. rst-class:: badges

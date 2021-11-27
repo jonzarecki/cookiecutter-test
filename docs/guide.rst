@@ -362,8 +362,6 @@ The documentation files in the top-level directory are rendered on GitHub_:
 
    ======================= ============================================
    ``README.rst``          Project description for GitHub and PyPI
-   ``CONTRIBUTING.rst``    Contributor Guide
-   ``CODE_OF_CONDUCT.rst`` Code of Conduct
    ======================= ============================================
 
 The files in the ``docs`` directory are
@@ -376,8 +374,6 @@ hosted on :ref:`Read the Docs <Read the Docs integration>`:
 
    ====================== =======================================================
    ``index.rst``          Main document
-   ``contributing.rst``   Contributor Guide (via include)
-   ``reference.rst``      API reference
    ====================== =======================================================
 
 The ``.github/workflows`` directory contains the :ref:`GitHub Actions workflows <GitHub Actions workflows>`:
@@ -491,13 +487,6 @@ The top-level directory contains several stand-alone documentation files:
 ``README.rst``
    This file is your main project page and displayed on GitHub and PyPI.
 
-``CONTRIBUTING.rst``
-   The Contributor Guide explains how other people can contribute to your project.
-
-``CODE_OF_CONDUCT.rst``
-   The Code of Conduct outlines the behavior
-   expected from participants of your project.
-   It is adapted from the `Contributor Covenant`_, version 2.0.
 
 .. _Contributor Covenant: https://www.contributor-covenant.org
 
@@ -514,10 +503,6 @@ The documentation files in the ``docs`` directory are built using Sphinx_:
    with links to other documentation pages.
    The *Changelog* menu entry
    links to the `GitHub Releases <GitHub Release_>`__ page of your project.
-
-``contributing.rst``
-   This file includes the Contributor Guide from ``CONTRIBUTING.rst``.
-
 
 ``reference.rst``
    The API reference for your project.
