@@ -55,7 +55,7 @@ jobs:
         with:
           builder: ${{ steps.buildx.outputs.name }}
           context: .
-          file: .common/conf_files/Dockerfile
+          file: ./Dockerfile
 {%- endraw %}
           tags: {{ cookiecutter.package_name }}:ci
 {%- raw %}
