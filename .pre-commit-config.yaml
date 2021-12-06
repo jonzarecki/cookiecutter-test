@@ -2,7 +2,7 @@ exclude: "^{{cookiecutter.project_name}}/"
 default_stages: [commit, manual]
 repos:
   - repo: https://github.com/jorisroovers/gitlint
-    rev: v0.16.0
+    rev: v0.17.0
     hooks:
       - id: gitlint
         stages: [commit-msg]
@@ -20,6 +20,6 @@ repos:
       - id: requirements-txt-fixer
 
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: "v2.4.1"
+    rev: "v2.5.1"
     hooks:
       - id: prettier
