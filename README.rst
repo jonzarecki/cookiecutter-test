@@ -72,7 +72,7 @@ Features
 - Generate API documentation with autodoc_ and napoleon_
 - Manage project labels with `GitHub Labeler`_
 
-The template supports Python 3.6, 3.7, 3.8, and 3.9.
+The template supports Python 3.7, 3.8, and 3.9.
 
 After creation:
 ---------------
