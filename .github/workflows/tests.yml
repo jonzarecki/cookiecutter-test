@@ -14,7 +14,7 @@ jobs:
     name: Python ${{ matrix.python-version }} (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3.0.2
+      - uses: actions/checkout@v3.2.0
         with:
           path: cookiecutter-test
       - uses: actions/setup-python@v4.0.0
