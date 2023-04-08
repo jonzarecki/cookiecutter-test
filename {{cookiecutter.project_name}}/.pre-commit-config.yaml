@@ -3,7 +3,7 @@ default_stages: [commit, manual]
 # pre-commit install --install-hooks -t pre-commit -t commit-msg -t post-commit -t pre-push
 repos:
   - repo: https://github.com/jorisroovers/gitlint
-    rev: v0.19.1
+    rev: v0.18.0  # 0.19 didn't manage to install for some reason
     hooks:
       - id: gitlint
         stages: [commit-msg]
