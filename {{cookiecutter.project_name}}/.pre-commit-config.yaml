@@ -3,7 +3,7 @@ default_stages: [commit, manual]
 # pre-commit install --install-hooks -t pre-commit -t commit-msg -t post-commit -t pre-push
 repos:
   - repo: https://github.com/jorisroovers/gitlint
-    rev: v0.15.1
+    rev: v0.19.1
     hooks:
       - id: gitlint
         stages: [commit-msg]
@@ -13,7 +13,7 @@ repos:
   #    rev: v2.1.0
   #    hooks:
   #      - id: codespell
-  #        exclude: ^notebooks.*$
+  #        exclude: ^notebooks.*|*.json$
   #        args: [--ignore-words-list=word1, word2]
 
   - repo: https://github.com/pre-commit/mirrors-pylint
@@ -26,14 +26,14 @@ repos:
         args: ["-rn", "-sn", "--rcfile=common/conf_files/.pylintrc"]
 
   - repo: https://github.com/timothycrosley/isort
-    rev: 5.8.0
+    rev: 5.12.0
     hooks:
       - id: isort
         args: ["--profile=black"]
         exclude: ^notebooks.*$
 
   - repo: https://github.com/ambv/black
-    rev: 22.3.0
+    rev: 23.3.0
     hooks:
       - id: black
         exclude: ^notebooks.*$
@@ -102,11 +102,11 @@ repos:
         args: ["-v", "2"]
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v2.19.4
+    rev: v3.3.1
     hooks:
       - id: pyupgrade
         exclude: ^notebooks.*$
-        args: [--py3-plus, --py36-plus]
+        args: [--py3-plus, --py38-plus]
 
   - repo: https://github.com/seddonym/import-linter
     rev: v1.2.1
@@ -115,7 +115,7 @@ repos:
         exclude: ^notebooks.*$
 
   - repo: https://github.com/MarcoGorelli/absolufy-imports
-    rev: v0.3.0
+    rev: v0.3.1
     hooks:
       - id: absolufy-imports
         exclude: ^notebooks.*$
@@ -134,7 +134,7 @@ repos:
           ]
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.0.1
+    rev: v4.4.0
     hooks:
       - id: trailing-whitespace
       - id: check-added-large-files
@@ -143,7 +143,6 @@ repos:
       - id: check-case-conflict
       - id: check-executables-have-shebangs
       - id: check-merge-conflict
-      - id: debug-statements
       - id: requirements-txt-fixer
 
   - repo: local
@@ -156,13 +155,13 @@ repos:
         types: [python]
 
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: "v2.3.2"
+    rev: "v2.7.0"
     hooks:
       - id: prettier
         exclude: ((cruft|cookiecutter)\.json)|(environment\.yml)
 
   - repo: https://github.com/cruft/cruft
-    rev: 2.11.1
+    rev: 2.12.0
     hooks:
       - id: cruft
         always_run: true
