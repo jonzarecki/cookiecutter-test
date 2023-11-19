@@ -60,8 +60,6 @@ Features
 - Linting with pre-commit_
 - Continuous integration with `GitHub Actions`_
 - Documentation with Sphinx_ and `Read the Docs`_
-- Automated uploads to PyPI_ and TestPyPI_ (TODO)
-- Automated release notes with `Release Drafter`_ (TODO)
 - Automated dependency updates with Dependabot_
 - Code formatting with Black_ and Prettier_
 - Testing with pytest_
@@ -72,7 +70,7 @@ Features
 - Generate API documentation with autodoc_ and napoleon_
 - Manage project labels with `GitHub Labeler`_
 
-The template supports Python 3.7, 3.8, and 3.9.
+The template supports Python 3.8-3.12.
 
 After creation:
 ---------------
