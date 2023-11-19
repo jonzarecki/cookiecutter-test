@@ -9,7 +9,7 @@ import toml
 from nox import Session
 
 package = "{{cookiecutter.package_name}}"
-python_versions = ["3.8"]
+python_versions = ["3.10"]
 nox.needs_version = ">= 2021.6.6"
 nox.options.sessions = ("tests", "xdoctest", "docs-build")
 pyproject_data = toml.loads(Path("pyproject.toml").read_text())
@@ -24,7 +24,7 @@ if os.path.exists(".gitmodules"):
 @nox.session(python=False)
 def tests(sess: Session) -> None:
     """Run the test suite."""
-    sess.install("coverage[toml]", "pytest", "pygments")
+    sess.run("pip", "install", "coverage[toml]", "pytest", "pygments")
 
     def add_quotes_and_join(lst: List[str]) -> str:
         return ",".join([f"{s}" for s in lst])
@@ -45,7 +45,7 @@ def coverage(sess: Session) -> None:
     """Produce the coverage report."""
     args = sess.posargs or ["report"]
 
-    sess.install("coverage[toml]")
+    sess.run("pip", "install", "coverage[toml]")
 
     if not sess.posargs and any(Path().glob(".cache/.coverage.*")):
         # keep .coverage.* files if not interactive (i.e. CI)
@@ -57,7 +57,7 @@ def coverage(sess: Session) -> None:
 def xdoctest(sess: Session) -> None:
     """Run examples with xdoctest."""
     args = sess.posargs or ["all"]
-    sess.install("xdoctest[colors]")
+    sess.run("pip", "install", "xdoctest[colors]")
     sess.run("python", "-m", "xdoctest", package, *args)
 
 
@@ -65,7 +65,7 @@ def xdoctest(sess: Session) -> None:
 def docs_build(sess: Session) -> None:
     """Build the documentation."""
     args = sess.posargs or ["docs/source", "docs/_build"]
-    sess.install("-r", "docs/source/requirements.txt")
+    sess.run("pip", "install", "-r", "docs/source/requirements.txt")
 
     build_dir = Path("docs", "_build")
     if build_dir.exists():
@@ -78,7 +78,7 @@ def docs_build(sess: Session) -> None:
 def docs(sess: Session) -> None:
     """Build and serve the documentation with live reloading on file changes."""
     args = sess.posargs or ["--open-browser", "docs/source", "docs/_build"]
-    sess.install("-r", "docs/source/requirements.txt")
+    sess.run("pip", "install", "-r", "docs/source/requirements.txt")
 
     build_dir = Path("docs", "_build")
     if build_dir.exists():
