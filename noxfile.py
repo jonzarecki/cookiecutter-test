@@ -21,7 +21,7 @@ def prepare_release(session: Session) -> None:
         *[f"--label={label}" for label in labels],
         *session.posargs,
     ]
-    session.install("click", "github3.py")
+    session.run("pip", "install", "click", "github3.py")
     session.run("python", "tools/prepare-github-release.py", *args, external=True)
 
 
@@ -29,7 +29,7 @@ def prepare_release(session: Session) -> None:
 def publish_release(session: Session) -> None:
     """Publish a GitHub release."""
     args = [f"--owner={owner}", f"--repository={repository}", *session.posargs]
-    session.install("click", "github3.py")
+    session.run("pip", "install", "click", "github3.py")
     session.run("python", "tools/publish-github-release.py", *args, external=True)
 
 
@@ -48,7 +48,7 @@ def docs(session: Session) -> None:
     if builddir.exists():
         shutil.rmtree(builddir)
 
-    session.install("-r", "docs/requirements.txt")
+    session.run("pip", "install", "-r", "docs/requirements.txt")
 
     if session.interactive:
         session.run("sphinx-autobuild", *args)
@@ -65,6 +65,6 @@ def linkcheck(session: Session) -> None:
     if builddir.exists():
         shutil.rmtree(builddir)
 
-    session.install("-r", "docs/requirements.txt")
+    session.run("pip", "install", "-r", "docs/requirements.txt")
 
     session.run("sphinx-build", *args)
