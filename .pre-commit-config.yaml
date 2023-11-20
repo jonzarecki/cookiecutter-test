@@ -2,7 +2,7 @@ exclude: "^{{cookiecutter.project_name}}/"
 default_stages: [commit, manual]
 repos:
   - repo: https://github.com/jorisroovers/gitlint
-    rev: v0.19.1
+    rev: v0.19.1 # if not working run in local env pip install virtualenv==v20.24.5
     hooks:
       - id: gitlint
         stages: [commit-msg]
