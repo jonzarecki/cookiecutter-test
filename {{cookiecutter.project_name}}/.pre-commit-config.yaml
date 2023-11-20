@@ -134,7 +134,7 @@ repos:
           ]
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v4.5.0
     hooks:
       - id: trailing-whitespace
       - id: check-added-large-files
@@ -155,7 +155,7 @@ repos:
         types: [python]
 
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: "v2.7.0"
+    rev: "v3.1.0"
     hooks:
       - id: prettier
         exclude: ((cruft|cookiecutter)\.json)|(environment\.yml)
